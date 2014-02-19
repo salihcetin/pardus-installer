@@ -1,10 +1,28 @@
 Pardus installer paketinin kaynak dosyaları debian dizini altında bulunmaktadır.
-Buradan kaynak paketin dosyalarına erişip düzenleme yapabilirsiniz.
+Buradan kaynak paketin dosyalarına erişip, kaynak pakette düzenleme yapabilirsiniz.
 
 Düzenlemeler yapıldıktan sonra;
+
+cd debian/
 sudo dpkg -b debian/ pardus-installer-en_sürümnumarası-revizyon_all.deb
-Komutu ile debian paket oluşturabilirsiniz. sürümnumarası yazan yere 
+
+Komutu ile debian paket oluşturabilirsiniz. sürümnumarası yazan kısma, 
 hazırladığınız paketin sürüm numarasını yazmalısınız. Örneğin 3.0 sürümünü 
-yeniden düzenlediniz ve 3.1 sürümünü oluşturudysanız sürümnumarası kısmına 
-3.1 yazmalısınız revizyon kısmına ise debian revizyonu yazılır. 
-Örneğin 3.0-1 sürümünü revize ettiyseniz revizyon kısmını 3.0-2 olarak değiştirmelisiniz.
+yeniden düzenlediniz ve 3.1 sürümünü oluşturudysanız, sürümnumarası kısmına 
+3.1 yazmalısınız. Revizyon kısmına ise debian revizyonu yazılır. 
+Örneğin 3.0-1 sürümünü revize ettiyseniz, ve sürümü değiştirmediyseniz, revizyon
+kısmını 3.0-2 olarak değiştirmelisiniz. 
+örnek: sudo -b debian/ prardus-installer-en_3.0-4_all.deb
+
+Hazırladığınız debian paketi lintian ile hatalara karşı kontrol edebilirsiniz.
+
+lintian pardus-installer-en_3.0-4_all.deb
+
+Komutu ile paket hataları kontrol edilir.
+E: ile başlayan satırlarda hatalar listelenir.
+W: ile başlayan satırlarda uyarılar listelenir.
+I: ile başlayan satırlarda bilgiler listelenir.
+N: ile başlayan satırlarda paket notları listelenir.
+
+Lintian ile listelenen hataları düzeltmelisiniz. Hataları düzelttikten sonra paketleme işlemini tekrar yaparak lintian kontrolünü tekrarlayınız.
+
