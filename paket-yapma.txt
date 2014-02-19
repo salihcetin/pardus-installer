@@ -3,5 +3,8 @@ Buradan kaynak paketin dosyalarına erişip düzenleme yapabilirsiniz.
 
 Düzenlemeler yapıldıktan sonra;
 sudo dpkg -b debian/ pardus-installer-en_sürümnumarası-revizyon_all.deb
-
-komutu ile debian paket oluşturabilirsiniz. sürümnumarası yazan yere hazırladığınız paketin sürüm numarasını yazmalısınız. Örneğin 3.0 sürümünü yeniden düzenlediniz ve 3.1 sürümünü oluşturudysanız sürümnumarası kısmına 3.1 yazmalısınız revizyon kısmına ise debian revizyonu yazılır. Örneğin 3.0-1 sürümünü revize ettiyseniz revizyon kısmını 3.0-2 olarak değiştirmelisiniz.
+Komutu ile debian paket oluşturabilirsiniz. sürümnumarası yazan yere 
+hazırladığınız paketin sürüm numarasını yazmalısınız. Örneğin 3.0 sürümünü 
+yeniden düzenlediniz ve 3.1 sürümünü oluşturudysanız sürümnumarası kısmına 
+3.1 yazmalısınız revizyon kısmına ise debian revizyonu yazılır. 
+Örneğin 3.0-1 sürümünü revize ettiyseniz revizyon kısmını 3.0-2 olarak değiştirmelisiniz.
