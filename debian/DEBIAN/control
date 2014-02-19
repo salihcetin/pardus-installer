@@ -1,7 +1,7 @@
 Package: pardus-installer-en
-Version: 3.0-4
+Version: 3.0-3
 Architecture: all
-Maintainer: Salih Cetin <salih.cetin@vestel.com.tr>
+Maintainer: Cavit VURAL <cavit.vural@adak.com.tr>
 Installed-Size: 2000
 Depends: python (>= 2.4), python (<< 3), python-gtk2, python-glade2, python-parted, gparted, inxi, python-geoip
 Section: admin
