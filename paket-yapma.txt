@@ -24,5 +24,9 @@ W: ile başlayan satırlarda uyarılar listelenir.
 I: ile başlayan satırlarda bilgiler listelenir.
 N: ile başlayan satırlarda paket notları listelenir.
 
-Lintian ile listelenen hataları düzeltmelisiniz. Hataları düzelttikten sonra paketleme işlemini tekrar yaparak lintian kontrolünü tekrarlayınız.
+Lintian ile listelenen hataları düzeltmelisiniz. Hataları düzelttikten sonra paketleme 
+işlemini tekrar yaparak lintian kontrolünü tekrarlayınız.
+
+(lintian ile kontrol yaptığınızda owner hatası verebilir, bunu dikkate almayınız.
+Her dosya için ownerhatası verilebilir. Ancak bu hatalara rağmen kurulum yapılabilir.)
 
