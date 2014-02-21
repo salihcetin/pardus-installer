@@ -8,9 +8,9 @@ gerekli paketlerin listesi ve açıklamaları verilmiştir. Gerekli paketleri bi
 
 Debian paket yaparken kaynak paketin arşiv dosyasına ihtiyaç duyulacaktır.
 
-tar -zcf pardus-installer-en-3.0.tar.zg pardus-installer-en-3.0
+tar -zcf pardus-installer-en-3.0.tar.gz pardus-installer-en-3.0
 
-Komutu ile kaynak pkaetin arşiv dosyasını oluşturabilirsiniz. Dephelper debian paket oluştururken
+Komutu ile kaynak paketin arşiv dosyasını oluşturabilirsiniz. Dephelper, debian paket oluştururken
 maintainer bilgilerini gerekli yerlere otomatik olarak ekleyecektir. Bunun için ad, soyad ve mail
 adresi bilgilerinizi export etmelisiniz.
 
@@ -22,32 +22,33 @@ Komutları ile maintainer bilgileri export edilir.
 
 dh_make -f ../pardus-installer-en-3.0.tar.gz
 
-Komutu ile delhelper çalıştırılır. Debhelper kaynak paketin bulunduğu üst dizinde .orig.tar.gz 
-adında bir dosya oluşturacaktır. Aynı zamanda kaynak paketin içinde debian adında bir dizin oluşturacaktır. Debian dizini içinde paket derlemesini yapan dosyalar ve dağıtımda paket hakkında 
-bilgi edinmek çin kullanılan dosyalar bulunmaktadır.
+Komutu ile delhelper çalıştırılır. Debhelper kaynak paketin bulunduğu üst dizinde .orig.tar.gz uzantılı 
+kaynak paketin arşiv dosyasını oluşturacaktır. Aynı zamanda kaynak paketin içinde debian adında
+bir dizin oluşturacaktır. Debian dizini içinde paket derlemesinde kullanılan dosyalar ve dağıtımda, 
+paket hakkında bilgi vermek için kullanılan dosyalar bulunmaktadır.
 
-Debhelper debian dizini altında bulunması gereken dosyalar için örnek olarak taslak dosyalar
-oluşturmuştur. Ayrıca .ex uzantılı dosyalar bulunması zorunlu olmayan gerekli durumlarda kullanılan
-dosyalara örnek kalıp olarak hazırlanmış dosyalardır. Kullanacağınız dosyaların ex uzantılarını
+Debhelper, debian dizini altında bulunması gereken dosyalar için örnek olması için taslak dosyalar
+oluşturmuştur. Ayrıca bulunması zorunlu olmayan dosyalara örnek kalıp olarak hazırlanmış .ex uzantılı dosyalar bulunmaktadır. Ex uzantılı dosyalardan, kullanacağınız dosyaların ex uzantılarını
 siliniz. Ex uzantılı dosyalar derleme sırasında dikkate alınmayarak otomatik olarak silinecektir.
 
-Debian dizini altında bulunması gerekli dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. Diğer soayalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
+Debian dizini altında bulunması gerekli dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. 
+Debian dizini altındaki diğer dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
 
-Control, copyright ve install dosyaları pardus-installer-en-3.0 için örnek olark ekledim. bunların üzerinden değişiklik yaparak kullanabilirsiniz.
+Control, copyright, changelog ve install dosyalarını pardus-installer-en-3.0 için örnek olarak ekledim. Hazırladığınız pakete uygun olarak bunların üzerinden değişiklik yaparak kullanabilirsiniz.
 
-Changelog dosyasında paketin bu sürümü üzerinde yaptığımız değişikleri belirtmemiz gerekir. Eğer bir bug'ı giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
+Changelog dosyasında paketin bu sürümü üzerinde yaptığınız değişikleri belirtmemiz gerekir. Eğer bir bug'ı giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
 
-Paket kurulumu için makefile dosyası olan paketlerde make install komutu ile yapılır. Makefile dosysı
-olmayan paketlerde dh_install kurulum işlemini install dosyasına uygun olarak yapar. İnstall dosyasında
-paket dosyalarının hangi dizinlere yüklenecekse dosya yollarının listesi verilir. Dh_install, makefile
-dosyası mevcutsa yükleme işlemini makefile dosyasına bırakır ancak makefile dosyası yoksa yükleme işlemi
-install dosyasına göre yapılır.
+Paket kurulumu, makefile dosyası olan paketlerde make install komutu ile yapılır. Makefile dosysı 
+olmayan paketlerde dh_install kurulum işlemini debian dizinindeki install dosyasına uygun olarak 
+yapar. İnstall dosyasında kurulacak paket dosyalarının hangi dizinlere yüklenecekse, dosya yollarının listesi verilir. Dh_install, makefile dosyası mevcutsa yükleme işlemini makefile dosyasına bırakır 
+Ancak makefile dosyası yoksa yükleme işlemi install dosyasına göre yapılır. Paketi düzenlerken 
+pakete bir dosya eklediyseniz yada kaldırdıysanız, install dosyasını bu değişikliklere göre tekrar
+düzenlemeniz gerekmektedir.
 
-Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi
-kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
-veya kullanıcı kontrolleri giib işlemler yapılır. Pardus-installer-en-3.0 için postinst dosyası ekledim.
-Pardus-installer-en-3.0 için diğerlerine ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer
-Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
+Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi veya kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
+veya kullanıcı kontrolleri gibi işlemler yapılır. Pardus-installer-en-3.0 için hazırlanan postinst 
+dosyasını ekledim.
+Pardus-installer-en-3.0 için diğerler scriptlere ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
 ve http://people.debian.org/~srivasta/MaintainerScripts.html sayfalarını inceleyiniz.
 
 Debian dizini altındaki dosyları düzenledikten sonra paket yapımına hazır durumdadır.
@@ -56,11 +57,10 @@ dpkg-buildpackage -rfakeroot
 
 Komutu ile kaynak paket derlenir ve debian paket oluşur.
 
-Lintian ile paketi hatalara karşı kontrol edebiliriz.
+Debian paket hatalarını görüntüleyebilmek için lintian paketi hazırlanmıştır. Lintian ile paket
+kontrol edilerek paket hataları listelenir.
 
 lintian pardus-installer-en_3.0-1_all.deb
-
-Dizinde .deb uzantılı paket oluşacaktır.
 
 Komutu ile lintian çalıştırılır. Lintian paketi kontrol ettikten sonra hata ve uyarıları listeler.
 E: ile başlayan satırlarda hatalar, W: ile başlayan satırlarda uyarılar, N: ile başlayan satırlarda 
