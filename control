@@ -1,0 +1,14 @@
+Source: pardus-installer-en
+Version : 3.0-4
+Section: admin
+Priority: optional
+Maintainer: Salih Cetin <salih.cetin@vestel.com.tr>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+
+Package: pardus-installer-en
+Architecture: all
+Depends: python (>= 2.4), python (<< 3), python-gtk2, python-glade2, python-parted, gparted, inxi, python-geoip
+Description: Pardus Live Installer
+ Live installler for Pardus
+ Thanks to Hakan Kahraman for modifications
