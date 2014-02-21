@@ -56,6 +56,15 @@ dpkg-buildpackage -rfakeroot
 
 Komutu ile kaynak paket derlenir ve debian paket oluşur.
 
+Lintian ile paketi hatalara karşı kontrol edebiliriz.
+
+lintian pardus-installer-en_3.0-1_all.deb
+
+Komutu ile lintian çalıştırılır. Lintian paketi kontrol ettikten sonra hata ve uyarıları listeler.
+E: ile başlayan satırlarda hatalar, W: ile başlayan satırlarda uyarılar, N: ile başlayan satırlarda 
+notlar, I: ile başlayan satırlarda da bilgiler listelenir. Hataları gidererek paketleme işlemini 
+tekrar yapmalısınız.
+
 Dizinde .deb uzantılı paket oluşacaktır. Paketi kurmak ve kaldırmak içn .deb uzantılı binary paketi 
 kullanabiliriz.
 
