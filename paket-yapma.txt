@@ -1,32 +1,62 @@
-Pardus installer paketinin kaynak dosyaları debian dizini altında bulunmaktadır.
+Pardus installer paketinin kaynak dosyaları pardus-installer-en-3.0 dizini altında bulunmaktadır.
 Buradan kaynak paketin dosyalarına erişip, kaynak pakette düzenleme yapabilirsiniz.
+Diğer dosyalar debian paket yaparken kullanılacak dosyalara örnek olması için konuldu.
 
-Düzenlemeler yapıldıktan sonra;
+Debian paket yaparken yardımcı paketler kullanılmaktadır. Bu paketlerin sisteminizde kurulu olması
+gerekmektedir. https://www.debian.org/doc/manuals/maint-guide/start.en.html#needprogs sayfasında 
+gerekli paketlerin listesi ve açıklamaları verilmiştir. Gerekli paketleri bilgisayarınıza kurunuz.
 
-cd debian/
-sudo dpkg -b debian/ pardus-installer-en_sürümnumarası-revizyon_all.deb
+Debian paket yaparken kaynak paketin arşiv dosyasına ihtiyaç duyulacaktır.
 
-Komutu ile debian paket oluşturabilirsiniz. sürümnumarası yazan kısma, 
-hazırladığınız paketin sürüm numarasını yazmalısınız. Örneğin 3.0 sürümünü 
-yeniden düzenlediniz ve 3.1 sürümünü oluşturudysanız, sürümnumarası kısmına 
-3.1 yazmalısınız. Revizyon kısmına ise debian revizyonu yazılır. 
-Örneğin 3.0-1 sürümünü revize ettiyseniz, ve sürümü değiştirmediyseniz, revizyon
-kısmını 3.0-2 olarak değiştirmelisiniz. 
-örnek: sudo -b debian/ prardus-installer-en_3.0-4_all.deb
+tar -zcf pardus-installer-en-3.0.tar.zg pardus-installer-en-3.0
 
-Hazırladığınız debian paketi lintian ile hatalara karşı kontrol edebilirsiniz.
+Komutu ile kaynak pkaetin arşiv dosyasını oluşturabilirsiniz. Dephelper debian paket oluştururken
+maintainer bilgilerini gerekli yerlere otomatik olarak ekleyecektir. Bunun için ad, soyad ve mail
+adresi bilgilerinizi export etmelisiniz.
 
-lintian pardus-installer-en_3.0-4_all.deb
+cd pardus-installer-en-3.0
+export DEBFULLNAME="Salih Cetin"
+export DEBEMAIL="salih.cetin@vestel.com.tr"
 
-Komutu ile paket hataları kontrol edilir.
-E: ile başlayan satırlarda hatalar listelenir.
-W: ile başlayan satırlarda uyarılar listelenir.
-I: ile başlayan satırlarda bilgiler listelenir.
-N: ile başlayan satırlarda paket notları listelenir.
+Komutları ile maintainer bilgileri export edilir.
 
-Lintian ile listelenen hataları düzeltmelisiniz. Hataları düzelttikten sonra paketleme 
-işlemini tekrar yaparak lintian kontrolünü tekrarlayınız.
+dh_make -f ../pardus-installer-en-3.0.tar.gz
 
-(lintian ile kontrol yaptığınızda owner hataları verebilir, bunları dikkate almayınız.
-Bu hatalara rağmen paket kurulum yapılabilir durumdadır.)
+Komutu ile delhelper çalıştırılır. Debhelper kaynak paketin bulunduğu üst dizinde .orig.tar.gz 
+adında bir dosya oluşturacaktır. Aynı zamanda kaynak paketin içinde debian adında bir dizin oluşturacaktır. Debian dizini içinde paket derlemesini yapan dosyalar ve dağıtımda paket hakkında 
+bilgi edinmek çin kullanılan dosyalar bulunmaktadır.
+
+Debhelper debian dizini altında bulunması gereken dosyalar için örnek olarak taslak dosyalar
+oluşturmuştur. Ayrıca .ex uzantılı dosyalar bulunması zorunlu olmayan gerekli durumlarda kullanılan
+dosyalara örnek kalıp olarak hazırlanmış dosyalardır. Kullanacağınız dosyaların ex uzantılarını
+siliniz. Ex uzantılı dosyalar derleme sırasında dikkate alınmayarak otomatik olarak silinecektir.
+
+Debian dizini altında bulunması gerekli dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. Diğer soayalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
+
+Control, changelog, copyright ve install dosyaları pardus-installer-en-3.0 için örnek olark ekledim. bunların üzerinden değişiklik yaparak kullanabilirsiniz.
+
+Changelog dosyası paket üzerinde yaptığımız değişikleri belirtmemiz gerekir. Eğer bir bugı giderdiyseniz
+bunu giderilen bug kodu ile birlikte bildirilmeli.
+
+Paket kurulumu için makefile dosyası olan paketlerde make install komutu ile yapılır. Makefile dosysı
+olmayan paketlerde dh_install kurulum işlemini install dosyasına uygun olarak yapar. İnstall dosyasında
+paket dosyalarının hangi dizinlere yüklenecekse dosya yollarının listesi verilir. Dh_install, makefile
+dosyası mevcutsa yükleme işlemini makefile dosyasına bırakır ancak makefile dosyası yoksa yükleme işlemi
+install dosyasına göre yapılır.
+
+Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi
+kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
+veya kullanıcı kontrolleri giib işlemler yapılır. Pardus-installer-en-3.0 için postinst dosyası ekledim.
+Pardus-installer-en-3.0 için diğerlerine ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer
+Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
+ve http://people.debian.org/~srivasta/MaintainerScripts.html sayfalarını inceleyiniz.
+
+Debian dizini altındaki dosyları düzenledikten sonra paket yapımına hazır durumdadır.
+
+dpkg-buildpackage -rfakeroot
+
+Komutu ile kaynak paket derlenir ve debian paket oluşur.
+
+Dizinde .deb uzantılı paket oluşacaktır. Paketi kurmak ve kaldırmak içn .deb uzantılı binary paketi 
+kullanabiliriz.
 
