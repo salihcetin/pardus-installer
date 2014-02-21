@@ -60,11 +60,13 @@ Lintian ile paketi hatalara karşı kontrol edebiliriz.
 
 lintian pardus-installer-en_3.0-1_all.deb
 
+Dizinde .deb uzantılı paket oluşacaktır.
+
 Komutu ile lintian çalıştırılır. Lintian paketi kontrol ettikten sonra hata ve uyarıları listeler.
 E: ile başlayan satırlarda hatalar, W: ile başlayan satırlarda uyarılar, N: ile başlayan satırlarda 
 notlar, I: ile başlayan satırlarda da bilgiler listelenir. Hataları gidererek paketleme işlemini 
 tekrar yapmalısınız.
 
-Dizinde .deb uzantılı paket oluşacaktır. Paketi kurmak ve kaldırmak içn .deb uzantılı binary paketi 
+Lintian ile paket kontrol ettikten sonra, paketi kurmak ve kaldırmak için .deb uzantılı binary paketi 
 kullanabiliriz.
 
