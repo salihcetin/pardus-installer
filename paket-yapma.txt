@@ -67,6 +67,6 @@ E: ile başlayan satırlarda hatalar, W: ile başlayan satırlarda uyarılar, N:
 notlar, I: ile başlayan satırlarda da bilgiler listelenir. Hataları gidererek paketleme işlemini 
 tekrar yapmalısınız.
 
-Lintian ile paket kontrol ettikten sonra, paketi kurmak ve kaldırmak için .deb uzantılı binary paketi 
+Lintian ile paketi kontrol ettikten sonra, paketi kurmak ve kaldırmak için .deb uzantılı binary paketi 
 kullanabiliriz.
 
