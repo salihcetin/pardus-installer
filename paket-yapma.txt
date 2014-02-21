@@ -33,10 +33,9 @@ siliniz. Ex uzantılı dosyalar derleme sırasında dikkate alınmayarak otomati
 
 Debian dizini altında bulunması gerekli dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. Diğer soayalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
 
-Control, changelog, copyright ve install dosyaları pardus-installer-en-3.0 için örnek olark ekledim. bunların üzerinden değişiklik yaparak kullanabilirsiniz.
+Control, copyright ve install dosyaları pardus-installer-en-3.0 için örnek olark ekledim. bunların üzerinden değişiklik yaparak kullanabilirsiniz.
 
-Changelog dosyası paket üzerinde yaptığımız değişikleri belirtmemiz gerekir. Eğer bir bugı giderdiyseniz
-bunu giderilen bug kodu ile birlikte bildirilmeli.
+Changelog dosyasında paketin bu sürümü üzerinde yaptığımız değişikleri belirtmemiz gerekir. Eğer bir bug'ı giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
 
 Paket kurulumu için makefile dosyası olan paketlerde make install komutu ile yapılır. Makefile dosysı
 olmayan paketlerde dh_install kurulum işlemini install dosyasına uygun olarak yapar. İnstall dosyasında
