@@ -53,8 +53,8 @@ düzenlemeniz gerekmektedir.
 
 Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi 
 veya kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
-veya kullanıcı kontrolleri gibi işlemler yapılır. Pardus-installer-en-3.0 için hazırlanan postinst 
-dosyasını ekledim.
+veya kullanıcı kontrolleri gibi işlemler yapılır. Bulunması zorunlu değildir, gerekli olanlar hazırlanmalı. 
+Pardus-installer-en-3.0 için hazırlanan postinst dosyasını ekledim.
 Pardus-installer-en-3.0 için diğerler scriptlere ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer 
 Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
 ve http://people.debian.org/~srivasta/MaintainerScripts.html sayfalarını inceleyiniz.
