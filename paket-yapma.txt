@@ -28,27 +28,35 @@ bir dizin oluşturacaktır. Debian dizini içinde paket derlemesinde kullanılan
 paket hakkında bilgi vermek için kullanılan dosyalar bulunmaktadır.
 
 Debhelper, debian dizini altında bulunması gereken dosyalar için örnek olması için taslak dosyalar
-oluşturmuştur. Ayrıca bulunması zorunlu olmayan dosyalara örnek kalıp olarak hazırlanmış .ex uzantılı dosyalar bulunmaktadır. Ex uzantılı dosyalardan, kullanacağınız dosyaların ex uzantılarını
+oluşturmuştur. Ayrıca bulunması zorunlu olmayan dosyalara örnek kalıp olarak hazırlanmış .ex uzantılı 
+dosyalar bulunmaktadır. Ex uzantılı dosyalardan, kullanacağınız dosyaların ex uzantılarını
 siliniz. Ex uzantılı dosyalar derleme sırasında dikkate alınmayarak otomatik olarak silinecektir.
 
-Debian dizini altında bulunması gerekli dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. 
-Debian dizini altındaki diğer dosyalarla ilgili https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
+Debian dizini altında bulunması gerekli dosyalarla ilgili 
+https://www.debian.org/doc/manuals/maint-guide/dreq.en.html sayfasını inceleyiniz. 
+Debian dizini altındaki diğer dosyalarla ilgili 
+https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını inceleyiniz.
 
-Control, copyright, changelog ve install dosyalarını pardus-installer-en-3.0 için örnek olarak ekledim. Hazırladığınız pakete uygun olarak bunların üzerinden değişiklik yaparak kullanabilirsiniz.
+Control, copyright, changelog ve install dosyalarını pardus-installer-en-3.0 için örnek olarak ekledim. 
+Hazırladığınız pakete uygun olarak bunların üzerinden değişiklik yaparak kullanabilirsiniz.
 
-Changelog dosyasında paketin bu sürümü üzerinde yaptığınız değişikleri belirtmemiz gerekir. Eğer bir bug'ı giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
+Changelog dosyasında paketin bu sürümü üzerinde yaptığınız değişikleri belirtmemiz gerekir. Eğer bir bug'ı 
+giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
 
 Paket kurulumu, makefile dosyası olan paketlerde make install komutu ile yapılır. Makefile dosysı 
 olmayan paketlerde dh_install kurulum işlemini debian dizinindeki install dosyasına uygun olarak 
-yapar. İnstall dosyasında kurulacak paket dosyalarının hangi dizinlere yüklenecekse, dosya yollarının listesi verilir. Dh_install, makefile dosyası mevcutsa yükleme işlemini makefile dosyasına bırakır 
+yapar. İnstall dosyasında kurulacak paket dosyalarının hangi dizinlere yüklenecekse, dosya yollarının 
+listesi verilir. Dh_install, makefile dosyası mevcutsa yükleme işlemini makefile dosyasına bırakır 
 Ancak makefile dosyası yoksa yükleme işlemi install dosyasına göre yapılır. Paketi düzenlerken 
 pakete bir dosya eklediyseniz yada kaldırdıysanız, install dosyasını bu değişikliklere göre tekrar
 düzenlemeniz gerekmektedir.
 
-Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi veya kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
+Preinst, postinst, prerm ve postrm dosyaları maintainer script olarak adlandırılır. Paketin yüklenmesi 
+veya kaldırılmasından önce ve sonra çalıştırılan scriptlerdir. Servislerin başlatılması, sonlandırılması
 veya kullanıcı kontrolleri gibi işlemler yapılır. Pardus-installer-en-3.0 için hazırlanan postinst 
 dosyasını ekledim.
-Pardus-installer-en-3.0 için diğerler scriptlere ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
+Pardus-installer-en-3.0 için diğerler scriptlere ihtiyaç olmadığı için diğerleri oluşturulmadı. Maintainer 
+Scriptle ilgili bilgi için https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html
 ve http://people.debian.org/~srivasta/MaintainerScripts.html sayfalarını inceleyiniz.
 
 Debian dizini altındaki dosyları düzenledikten sonra paket yapımına hazır durumdadır.
