@@ -40,6 +40,10 @@ https://www.debian.org/doc/manuals/maint-guide/dother.en.html sayfasını incele
 Control, copyright, changelog ve install dosyalarını pardus-installer-en-3.0 için örnek olarak ekledim. 
 Hazırladığınız pakete uygun olarak bunların üzerinden değişiklik yaparak kullanabilirsiniz.
 
+Control dosyası paket bilgilerini, maintainer bilgilerini içerir. Paketin hangi paketlere yada kütüphanelere 
+ihtiyaç duyduğunu veya hangi paketlerle çatıştığını control dosyasında belirtilmesi gerekmektedir. Yaptığınız 
+düzenlemede farklı bir pakete veya kütüphaneye itiyaç duyuyorsa yada çatışıyorsa control dosyasına eklemelisiniz.
+
 Changelog dosyasında paketin bu sürümü üzerinde yaptığınız değişikleri belirtmemiz gerekir. Eğer bir bug'ı 
 giderdiyseniz, giderilen bug kodu ile birlikte bildirilmeli.
 
